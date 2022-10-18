@@ -1,0 +1,58 @@
+{% load static %}
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
+    <meta name="generator" content="Jekyll v3.8.6">
+    <title>Floating labels example · Bootstrap</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+  
+    <link rel="stylesheet" href="{% static 'css/floating-labels.css' %}">
+
+    <!-- Bootstrap core CSS -->
+    <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
+    <link rel="stylesheet" href="{% static 'css/font-awesome.min.css' %}">
+
+</head>
+
+<body>
+    <form class="form-signin" method="POST">
+        {% csrf_token %}
+        <!--for security-->
+        <div class="text-center mb-4">
+            <img src="{% static 'img/user.png' %}" class="rounded mx-auto d-block" alt="..." width="20%" height="100%">
+            <!-- <img class="mb-4 mx-auto d-block"  alt="" > -->
+            <h1 class="h3 mb-3 font-weight-normal">Log In</h1>
+            <p>Access your account</p>
+        </div>
+        {% if form.errors %}
+        <p class="text-danger">Your Username and Password didn't match..please try again !</p>
+        {% endif %}
+        <div class="form-label-group">
+            <input type="text" id="id_username" name="username" class="form-control" placeholder="Username" required autofocus>
+            <label for="Username">Username</label>
+        </div>
+
+        <div class="form-label-group">
+            <input type="password" id="inputPassword" name="password" class="form-control" placeholder="Password" required>
+            <label for="inputPassword">Password</label>
+        </div>
+
+        <div class="checkbox mb-5">
+            <label>
+<input type="checkbox" value="remember-me"> Remember me
+</label>
+        </div>
+        <button class="btn btn-lg btn-success btn-block" type="submit">log In</button>
+
+        <a href="register" class="btn btn-primary my-2" id="clickbtn">Register</a>
+        <p class="mt-5 mb-3 text-muted text-center">&copy; 2017-2019</p>
+    </form>
+</body>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js" integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.min.js" integrity="sha384-7VPbUDkoPSGFnVtYi0QogXtr74QeVeeIs99Qfg5YCF+TidwNdjvaKZX19NZ/e6oz" crossorigin="anonymous"></script>
+</html>
